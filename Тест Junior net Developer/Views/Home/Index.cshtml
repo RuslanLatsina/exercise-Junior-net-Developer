@@ -1,0 +1,55 @@
+﻿@using System.Web.UI.WebControls
+@using Тест_Junior_net_Developer.Controllers
+@model IEnumerable<Тест_Junior_net_Developer.Models.Data>
+@{
+    ViewBag.Title = "Table";
+}
+
+<h2>@ViewBag.LogName</h2>
+
+
+
+
+
+    
+
+<table class="table">
+    <tr>
+        <th>name</th>
+        <th>company</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>tag</th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr >
+            <td>
+                @Html.ActionLink(item.Name, "Page", new {guid = item.Guid})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+
+                @{
+                    foreach (var tag in item.Tags)
+                    {
+                        @Html.ActionLink(tag,"Index", new { tag = tag }) 
+                         <br />
+                    }
+                }
+
+            </td>
+        </tr>
+        }
+</table>

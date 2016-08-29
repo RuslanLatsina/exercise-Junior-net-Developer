@@ -1,0 +1,68 @@
+﻿@model Тест_Junior_net_Developer.Models.Data
+
+@{
+    ViewBag.Title = "Page";
+}
+
+<h2>@ViewBag.LogName</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <img src="@Model.Picture" alt="HTML5 Icon" width="128" height="128">
+        <h2>@Model.Name , @Model.Gender</h2>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Registered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registered)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.About)
+        </dt>
+
+        <h4><hr/> @Model.About</h4>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
